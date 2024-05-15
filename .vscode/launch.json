@@ -7,7 +7,7 @@
         {
             "name": "quiz_app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
         },
         {
             "name": "quiz_app (profile mode)",

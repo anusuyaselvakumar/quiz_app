@@ -1,6 +1,5 @@
 // import 'dart:js_interop';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class QuestionsSummary extends StatelessWidget {
   const QuestionsSummary(this.summaryData, {super.key});
@@ -13,19 +12,23 @@ class QuestionsSummary extends StatelessWidget {
         (data) {
           return Row(
             children: [
-              Text((((data['questionindex'] as int) + 1).toString())),
+              Text(
+                (((data['questionindex'] as int) + 1).toString()),
+                style: const TextStyle(color: Colors.white),
+              ),
               Expanded(
                 child: SizedBox(
-                  height: 300,
+                  height: 95,
                   child: SingleChildScrollView(
                     child: Column(
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(data['question'] as String),
+                        Text(data['question'] as String? ?? ''),
                         const SizedBox(
                           height: 3,
                         ),
-                        Text(data['user_answer'] as String),
-                        Text(data['currect_answer'] as String),
+                        Text(data['user_answer'] as String? ?? ''),
+                        Text(data['correct_answer'] as String? ?? ''),
                       ],
                     ),
                   ),
